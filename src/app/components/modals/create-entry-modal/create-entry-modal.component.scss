@@ -1,0 +1,17 @@
+:host {
+  border-radius: 0;
+  display: block;
+  background: #efefef;
+  padding: 16px;
+}
+
+:host * {
+  border-radius: 0;
+  border: 0;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+}

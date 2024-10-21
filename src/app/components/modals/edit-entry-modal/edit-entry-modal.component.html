@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>Edit Employee</h2>
+
+<form [formGroup]="form">
+  <mat-dialog-content class="stack">
+    <!---->
+    <app-form-field label="Full Name" [control]="fullName" placeholder="Enter full name" [errors]="{
+        required: 'Required',
+        minlength: 'Minimum 3 characters'
+      }">
+    </app-form-field>
+    <!---->
+    <app-form-field label="Salary" type="number" [control]="salary" placeholder="Enter salary" [errors]="{
+        required: 'Required',
+      }">
+    </app-form-field>
+    <!---->
+    <app-form-field label="Email" type="email" [control]="email" placeholder="Enter email" [errors]="{
+        required: 'Required',
+        email: 'Invalid email'
+      }">
+    </app-form-field>
+    <!---->
+    <mat-form-field appearance="fill">
+      <mat-label>Position</mat-label>
+      <mat-select [formControl]="position" placeholder="Select a position">
+        <mat-option *ngFor="let position of positions" [value]="position">{{ position }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="position.hasError('required')">Position required</mat-error>
+    </mat-form-field>
+  </mat-dialog-content>
+</form>
+
+<mat-dialog-actions>
+  <button mat-button (click)="dialogRef.close()">Cancel</button>
+  <button mat-button (click)="closeDialog()" [disabled]="form.invalid">Save Changes</button>
+</mat-dialog-actions>

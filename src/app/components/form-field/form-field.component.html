@@ -1,0 +1,8 @@
+<mat-form-field appearance="fill" class="form-field">
+  <mat-label>{{ label }}</mat-label>
+  <input [maxlength]="maxlength" matInput [type]="type" [formControl]="control" [placeholder]="placeholder">
+
+  <mat-error *ngFor="let errorCode of (control.errors | keyvalue)">
+    {{ errors[errorCode.key] }}
+  </mat-error>
+</mat-form-field>

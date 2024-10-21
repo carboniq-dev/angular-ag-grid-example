@@ -1,0 +1,10 @@
+<div class="container">
+  <button class="button" mat-raised-button color="primary" (click)="openCreateModal()">Add New</button>
+
+  <div class="ag-theme-quartz">
+    <ag-grid-angular [paginationPageSize]="paginationPageSize" [paginationPageSizeSelector]="paginationPageSizeSelector"
+      style="height: 60vh;" [columnDefs]="columnDefs" [rowData]="rowData"
+      [defaultColDef]="{ resizable: true, sortable: true, filter: true }" [pagination]="true" [paginationPageSize]="10">
+    </ag-grid-angular>
+  </div>
+</div>
